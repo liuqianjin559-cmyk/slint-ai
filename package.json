@@ -1,7 +1,7 @@
 {
   "name": "slint-ai",
   "displayName": "Slint AI",
-  "description": "Slint language support with AI enhancements: live preview, Chinese UI, copy node, auto-completion, go-to definition, and syntax highlighting for the Slint GUI framework.",
+  "description": "Slint language support for AI-assisted development: copy node hierarchy for precise AI targeting, Chinese live-preview UI, auto-completion, go-to definition, and syntax highlighting.",
   "keywords": [
     "Slint",
     "Slint AI",
