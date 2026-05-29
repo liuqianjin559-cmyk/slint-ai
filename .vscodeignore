@@ -4,3 +4,6 @@ tsconfig.default.json
 tests/
 .vscode/
 bin/*.d
+*.svg
+extension-logo.svg
+slint-file-icon.svg

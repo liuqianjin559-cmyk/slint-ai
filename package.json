@@ -1,23 +1,34 @@
 {
-  "name": "slint",
-  "displayName": "Slint",
-  "description": "Slint language support, featuring auto-completion, go-to definition, refactoring, syntax coloration, and a live preview and editing of Slint GUIs. Slint is a lightweight cross-platform native GUI framework for Rust, C++, JavaScript, and Python.",
+  "name": "slint-ai",
+  "displayName": "Slint AI",
+  "description": "Slint language support with AI enhancements: live preview, Chinese UI, copy node, auto-completion, go-to definition, and syntax highlighting for the Slint GUI framework.",
   "keywords": [
     "Slint",
+    "Slint AI",
     "GUI",
     "UI",
     "HMI",
     "Qt/QML Alternative",
     "live preview",
+    "Chinese",
+    "i18n",
     "drag-and-drop editor"
   ],
   "version": "1.17.0",
-  "publisher": "Slint",
+  "publisher": "slint-ai",
   "icon": "extension-logo.png",
   "license": "GPL-3.0",
+  "homepage": "https://github.com/liuqianjin559-cmyk/slint-ai",
+  "bugs": {
+    "url": "https://github.com/liuqianjin559-cmyk/slint-ai/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/slint-ui/slint"
+    "url": "https://github.com/liuqianjin559-cmyk/slint-ai.git"
+  },
+  "galleryBanner": {
+    "color": "#2379F4",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.82.0"
@@ -25,7 +36,7 @@
   "categories": [
     "Programming Languages"
   ],
-  "qna": "https://github.com/slint-ui/slint/discussions/categories/q-a",
+  "qna": "https://github.com/liuqianjin559-cmyk/slint-ai/discussions",
   "activationEvents": [
     "onLanguage:rust",
     "onWebviewPanel:slint-preview",
@@ -50,8 +61,8 @@
         ],
         "configuration": "language-configuration.json",
         "icon": {
-          "light": "slint-file-icon.svg",
-          "dark": "slint-file-icon.svg"
+          "light": "slint-file-icon.png",
+          "dark": "slint-file-icon.png"
         }
       }
     ],
@@ -86,25 +97,25 @@
       {
         "command": "slint.showPreview",
         "title": "Show Preview",
-        "category": "Slint",
+        "category": "Slint AI",
         "icon": "$(preview)"
       },
       {
         "command": "slint.selectRemotePreview",
         "title": "(Experimental) Connect to Remote Preview",
-        "category": "Slint",
+        "category": "Slint AI",
         "icon": "$(preview)"
       },
       {
         "command": "slint.disconnectRemotePreview",
         "title": "(Experimental) Disconnect Remote Preview",
-        "category": "Slint",
+        "category": "Slint AI",
         "icon": "$(debug-disconnect)"
       },
       {
         "command": "slint.reload",
         "title": "Restart server",
-        "category": "Slint",
+        "category": "Slint AI",
         "icon": "$(debug-restart)"
       },
       {
@@ -141,7 +152,7 @@
     },
     "configuration": {
       "type": "object",
-      "title": "Slint",
+      "title": "Slint AI",
       "properties": {
         "slint.lsp-args": {
           "type": "array",
@@ -202,8 +213,8 @@
     "walkthroughs": [
       {
         "id": "slint.welcomeWalkthrough",
-        "title": "Getting Started with Slint",
-        "description": "Dive into VSCode's rich Slint development experience",
+        "title": "Getting Started with Slint AI",
+        "description": "Dive into VS Code's rich Slint AI development experience",
         "steps": [
           {
             "id": "create_slint_file",
@@ -238,7 +249,9 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm build:wasm_lsp-release && pnpm compile-production && shx echo \"GPL-3.0-only OR LicenseRef-Slint-Software-3.0\" > LICENSE.txt",
+    "vscode:prepublish": "node compile-desktop.js --production && node -e \"require('esbuild').buildSync({entryPoints:['src/browser.ts'],bundle:true,external:['vscode'],outfile:'out/browser.js',format:'cjs',platform:'browser',minify:true})\" && node -e \"require('fs').writeFileSync('LICENSE.txt','GPL-3.0-only OR LicenseRef-Slint-Software-3.0')\"",
+    "package:desktop": "pnpm vscode:prepublish && pnpm dlx @vscode/vsce package --no-dependencies",
+    "package:publish": "pnpm package:desktop && pnpm dlx @vscode/vsce publish --no-dependencies",
     "build:lsp": "cargo build -p slint-lsp",
     "build:lsp-release": "cargo build --release -p slint-lsp",
     "build:wasm_lsp": "shx pwd | xargs -I {} wasm-pack build --dev --target web --no-pack ../../tools/lsp --out-dir {}/out -- --no-default-features --features backend-winit,renderer-femtovg,preview",
