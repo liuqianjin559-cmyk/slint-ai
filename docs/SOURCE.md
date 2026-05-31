@@ -2,67 +2,71 @@
 
 ## English
 
-This project has **two parts**:
+This repository is **self-contained** for the VS Code extension and documents all **slint-lsp** changes needed to build the bundled binary.
 
-### 1. VS Code extension (this repo) ✅
+### 1. VS Code extension (this repo root)
 
 - **Repository:** https://github.com/liuqianjin559-cmyk/slint-ai
-- **Path:** `vscode/`
 - **Language:** TypeScript
-- **Includes:** LSP client, `slint/set_clipboard` handler, preview language settings
+- **Includes:** LSP client, `slint/set_clipboard`, `slint/set_preview_language`, preview language settings
 
-### 2. Forked `slint-lsp` (Rust) ✅
+### 2. slint-lsp changes (overlay, not a full Slint fork)
 
-- **Path:** [`../slint/`](../slint/) (junction to local Slint tree)
-- **Upstream base:** [slint-ui/slint](https://github.com/slint-ui/slint)
-- **Changes:** `tools/lsp/` — copy node hierarchy, `SetClipboard` LSP notification
+- **Location:** [`patches/lsp/overlay/`](patches/lsp/overlay/)
+- **Upstream base:** [slint-ui/slint](https://github.com/slint-ui/slint) tag **`v1.15.0`**
+- **Manifest:** [`patches/lsp/MANIFEST.json`](patches/lsp/MANIFEST.json)
+- **Upstreaming guide:** [`docs/UPSTREAM.md`](UPSTREAM.md)
 
-**Key modified files:**
+**Features:**
 
-| File | Change |
-|------|--------|
-| `tools/lsp/common.rs` | `PreviewToLspMessage::SetClipboard`, `slint/set_clipboard` notification |
-| `tools/lsp/preview/element_selection.rs` | Build hierarchy string, `copy_node_hierarchy()` |
-| `tools/lsp/preview/ui.rs` | Wire `copy-node-hierarchy` callback |
-| `tools/lsp/ui/api.slint` | `copy-node-hierarchy` callback |
-| `tools/lsp/ui/components/selection-popup.slint` | **Copy node** button |
+| Feature | Key files |
+|---------|-----------|
+| Copy node hierarchy | `preview/element_selection.rs`, `selection-popup.slint`, `SetClipboard` in `common.rs` |
+| Preview i18n | `preview.rs`, `lang/zh-cn/`, `ui/main.slint` language menu |
 
-### Build LSP + extension
+### Build from source
 
 ```powershell
-cd vscode
+# One-time: clone upstream Slint
+git clone --depth 1 --branch v1.15.0 https://github.com/slint-ui/slint.git ../slint
+
+cd slint-ai   # this repo
 pnpm install
-pnpm build:lsp-local    # cargo build slint-lsp + copy to bin/
+pnpm apply:lsp-patches   # copy overlay onto ../slint
+pnpm build:lsp-local     # cargo build + copy to bin/
 pnpm compile:desktop
 pnpm package:desktop
 ```
 
+Set `SLINT_DIR` if Slint is not at `../slint`.
+
 ### Debug in VS Code
 
-1. Open the `vscode` folder in VS Code
-2. Run **Terminal → Run Build Task** or `pnpm build:lsp-local && pnpm compile:desktop`
-3. Press **F5** (Run Extension) — uses `bin/slint-lsp.exe` via workspace settings
+1. Open this folder in VS Code
+2. `pnpm apply:lsp-patches && pnpm build:lsp-local && pnpm compile:desktop`
+3. Press **F5** — uses `bin/slint-lsp.exe` via workspace settings
 
 ---
 
 ## 中文
 
-### 1. VS Code 扩展（本仓库）✅
+### 1. VS Code 扩展（本仓库根目录）
 
-- **仓库：** https://github.com/liuqianjin559-cmyk/slint-ai
-- **目录：** `vscode/`
+- TypeScript 源码在 `src/`
 
-### 2. 修改版 slint-lsp（Rust）✅
+### 2. slint-lsp 改动（overlay）
 
-- **目录：** [`../slint/`](../slint/)
-- **改动位置：** `tools/lsp/`（拷贝节点层级 + 剪贴板通知）
+- **不是**完整 Slint 仓库，只有改过的文件：`patches/lsp/overlay/`
+- 基于官方 **v1.15.0**，给 Slint 维护者看的说明在 [`docs/UPSTREAM.md`](UPSTREAM.md)
 
-### 构建与调试
+### 构建
 
 ```powershell
-cd vscode
+git clone --depth 1 --branch v1.15.0 https://github.com/slint-ui/slint.git ../slint
+pnpm install
+pnpm apply:lsp-patches
 pnpm build:lsp-local
 pnpm compile:desktop
 ```
 
-然后按 **F5** 启动扩展调试。
+然后 **F5** 调试扩展。

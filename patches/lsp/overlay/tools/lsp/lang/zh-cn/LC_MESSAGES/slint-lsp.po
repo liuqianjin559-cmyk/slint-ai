@@ -1,0 +1,101 @@
+# Chinese translations for Slint LSP preview UI
+msgid ""
+msgstr ""
+"Project-Id-Version: slint-lsp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-30 00:00+0000\n"
+"PO-Revision-Date: 2026-05-30 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese\n"
+"Language: zh-cn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Slint Live-Preview"
+msgstr "Slint 实时预览"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "View"
+msgstr "视图"
+
+msgid "Window"
+msgstr "窗口"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Follow VS Code"
+msgstr "跟随 VS Code"
+
+msgid "Reload"
+msgstr "重新加载"
+
+msgid "Library"
+msgstr "组件库"
+
+msgid "Properties"
+msgstr "属性"
+
+msgid "Outline"
+msgstr "大纲"
+
+msgid "Simulation Data"
+msgstr "模拟数据"
+
+msgid "Console"
+msgstr "控制台"
+
+msgid "Keep on Top"
+msgstr "置顶"
+
+msgid "Undo"
+msgstr "撤销"
+
+msgid "Redo"
+msgstr "重做"
+
+msgid "Copy node"
+msgstr "拷贝节点"
+
+msgid "Filter"
+msgstr "过滤"
+
+msgid "Layouts"
+msgstr "布局"
+
+msgid "Interactive"
+msgstr "交互"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "No match"
+msgstr "无匹配"
+
+msgid "layout"
+msgstr "布局"
+
+msgid "interactive"
+msgstr "交互"
+
+msgid "Open Demo"
+msgstr "打开示例"
+
+msgid "Share"
+msgstr "分享"
+
+msgid "Copy Permalink to Clipboard"
+msgstr "复制永久链接到剪贴板"
+
+msgid "About"
+msgstr "关于"

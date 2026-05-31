@@ -1,0 +1,50 @@
+{
+  "upstream": "https://github.com/slint-ui/slint",
+  "baseTag": "v1.15.0",
+  "license": "MIT-0",
+  "description": "Community slint-lsp changes for Node Path Copier for Slint",
+  "features": [
+    {
+      "id": "copy-node-hierarchy",
+      "title": "Copy node hierarchy from live preview",
+      "files": [
+        "tools/lsp/preview/element_selection.rs",
+        "tools/lsp/preview/ui.rs",
+        "tools/lsp/ui/api.slint",
+        "tools/lsp/ui/components/selection-popup.slint",
+        "tools/lsp/common.rs",
+        "tools/lsp/main.rs",
+        "tools/lsp/wasm_main.rs"
+      ]
+    },
+    {
+      "id": "preview-i18n",
+      "title": "Preview UI internationalization (en / zh-cn)",
+      "files": [
+        "tools/lsp/preview.rs",
+        "tools/lsp/language.rs",
+        "tools/lsp/build.rs",
+        "tools/lsp/ui/main.slint",
+        "tools/lsp/ui/api.slint",
+        "tools/lsp/lang/zh-cn/LC_MESSAGES/slint-lsp.po",
+        "tools/lsp/common.rs",
+        "tools/lsp/main.rs",
+        "tools/lsp/wasm_main.rs"
+      ]
+    }
+  ],
+  "files": [
+    "tools/lsp/common.rs",
+    "tools/lsp/main.rs",
+    "tools/lsp/wasm_main.rs",
+    "tools/lsp/language.rs",
+    "tools/lsp/preview.rs",
+    "tools/lsp/build.rs",
+    "tools/lsp/preview/element_selection.rs",
+    "tools/lsp/preview/ui.rs",
+    "tools/lsp/ui/main.slint",
+    "tools/lsp/ui/api.slint",
+    "tools/lsp/ui/components/selection-popup.slint",
+    "tools/lsp/lang/zh-cn/LC_MESSAGES/slint-lsp.po"
+  ]
+}

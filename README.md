@@ -66,13 +66,15 @@ code --install-extension slint-ai-1.17.1.vsix
 **Build from source:**
 
 ```sh
+git clone --depth 1 --branch v1.15.0 https://github.com/slint-ui/slint.git ../slint
 pnpm install
+pnpm apply:lsp-patches   # apply patches/lsp/overlay onto ../slint
 pnpm build:lsp-local
 pnpm compile:desktop
 pnpm package:desktop
 ```
 
-LSP source lives in [`../slint/`](../slint/) — see [docs/SOURCE.md](docs/SOURCE.md).
+LSP changes are in [`patches/lsp/overlay/`](patches/lsp/overlay/) (vs Slint v1.15.0). See [docs/SOURCE.md](docs/SOURCE.md) and [docs/UPSTREAM.md](docs/UPSTREAM.md) for maintainers.
 
 ### Settings
 
@@ -89,10 +91,11 @@ Based on [slint-ui/slint](https://github.com/slint-ui/slint) (`editors/vscode`).
 
 | Component | Location | Status |
 |-----------|----------|--------|
-| **VS Code extension** (TypeScript) | This repository | ✅ Public |
-| **slint-lsp** (Rust, copy-node + zh-cn preview) | Separate fork — see [docs/SOURCE.md](docs/SOURCE.md) | 🚧 In progress |
+| **VS Code extension** (TypeScript) | `src/` in this repo | ✅ Public |
+| **slint-lsp changes** (Rust) | [`patches/lsp/overlay/`](patches/lsp/overlay/) vs Slint v1.15.0 | ✅ Public |
+| **Upstream porting guide** | [docs/UPSTREAM.md](docs/UPSTREAM.md) | For Slint maintainers |
 
-The packaged VSIX includes a prebuilt `slint-lsp` binary for Windows x64. Corresponding Rust source will be published in a linked repository to comply with GPL and upstream requests.
+The packaged VSIX includes a prebuilt `slint-lsp` binary for Windows x64, built from upstream v1.15.0 + this overlay.
 
 **Issues for this fork:** [github.com/liuqianjin559-cmyk/slint-ai/issues](https://github.com/liuqianjin559-cmyk/slint-ai/issues)
 
@@ -160,13 +163,15 @@ code --install-extension slint-ai-1.17.1.vsix
 **源码构建：**
 
 ```sh
+git clone --depth 1 --branch v1.15.0 https://github.com/slint-ui/slint.git ../slint
 pnpm install
+pnpm apply:lsp-patches
 pnpm build:lsp-local
 pnpm compile:desktop
 pnpm package:desktop
 ```
 
-LSP 源码位于 [`../slint/`](../slint/)，详见 [docs/SOURCE.md](docs/SOURCE.md)。
+LSP 改动在 [`patches/lsp/overlay/`](patches/lsp/overlay/)（基于 Slint v1.15.0）。详见 [docs/SOURCE.md](docs/SOURCE.md)、[docs/UPSTREAM.md](docs/UPSTREAM.md)。
 
 ### 配置
 
@@ -183,9 +188,10 @@ LSP 源码位于 [`../slint/`](../slint/)，详见 [docs/SOURCE.md](docs/SOURCE.
 
 | 组件 | 位置 | 状态 |
 |------|------|------|
-| **VS Code 扩展**（TypeScript） | 本仓库 | ✅ 已公开 |
-| **slint-lsp**（Rust，拷贝节点 + 中文预览） | 独立 fork — 见 [docs/SOURCE.md](docs/SOURCE.md) | 🚧 整理发布中 |
+| **VS Code 扩展**（TypeScript） | 本仓库 `src/` | ✅ 已公开 |
+| **slint-lsp 改动**（Rust） | [`patches/lsp/overlay/`](patches/lsp/overlay/) | ✅ 已公开 |
+| **上游合并说明** | [docs/UPSTREAM.md](docs/UPSTREAM.md) | 给 Slint 维护者 |
 
-打包的 VSIX 内含 Windows x64 预编译 `slint-lsp`。对应 Rust 源码将在链接仓库中公开，以满足 GPL 与上游要求。
+打包的 VSIX 内含 Windows x64 预编译 `slint-lsp`（v1.15.0 + overlay 构建）。
 
 **本 fork 问题反馈：** [github.com/liuqianjin559-cmyk/slint-ai/issues](https://github.com/liuqianjin559-cmyk/slint-ai/issues)

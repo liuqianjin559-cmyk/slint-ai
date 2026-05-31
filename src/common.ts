@@ -337,7 +337,9 @@ export function activate(
                 "workspace/didChangeConfiguration",
                 { settings: "" },
             );
-            wasm_preview.update_configuration();
+            if (ev.affectsConfiguration("slint.preview.providedByEditor")) {
+                wasm_preview.update_configuration();
+            }
         }
     });
 
