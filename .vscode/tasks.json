@@ -4,10 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build slint-lsp",
+            "type": "shell",
+            "command": "pnpm build:lsp-local",
+            "options": { "cwd": "${workspaceFolder}" }
+        },
+        {
             "label": "compile extension",
             "type": "shell",
             "command": "node",
             "args": ["${workspaceFolder}/compile-desktop.js"],
+            "dependsOn": ["build slint-lsp"],
             "group": {
                 "kind": "build",
                 "isDefault": true

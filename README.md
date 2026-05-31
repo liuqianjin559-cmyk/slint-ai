@@ -67,10 +67,12 @@ code --install-extension slint-ai-1.17.1.vsix
 
 ```sh
 pnpm install
+pnpm build:lsp-local
 pnpm compile:desktop
-# Copy slint-lsp.exe into bin/ (see docs in repo)
 pnpm package:desktop
 ```
+
+LSP source lives in [`../slint/`](../slint/) — see [docs/SOURCE.md](docs/SOURCE.md).
 
 ### Settings
 
@@ -159,10 +161,12 @@ code --install-extension slint-ai-1.17.1.vsix
 
 ```sh
 pnpm install
+pnpm build:lsp-local
 pnpm compile:desktop
-# 将 slint-lsp.exe 放入 bin/ 目录
 pnpm package:desktop
 ```
+
+LSP 源码位于 [`../slint/`](../slint/)，详见 [docs/SOURCE.md](docs/SOURCE.md)。
 
 ### 配置
 
