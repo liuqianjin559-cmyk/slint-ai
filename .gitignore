@@ -3,3 +3,6 @@ LICENSE.txt
 bin/
 out/
 node_modules/
+
+# Local-only drafts (not for public repo)
+docs/REPLY-TO-OGOFFART.md
