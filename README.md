@@ -83,6 +83,15 @@ pnpm package:desktop
 
 Based on [slint-ui/slint](https://github.com/slint-ui/slint) (`editors/vscode`). Licensed under **GPL-3.0** (see [LICENSE.txt](LICENSE.txt)).
 
+### Source code
+
+| Component | Location | Status |
+|-----------|----------|--------|
+| **VS Code extension** (TypeScript) | This repository | ✅ Public |
+| **slint-lsp** (Rust, copy-node + zh-cn preview) | Separate fork — see [docs/SOURCE.md](docs/SOURCE.md) | 🚧 In progress |
+
+The packaged VSIX includes a prebuilt `slint-lsp` binary for Windows x64. Corresponding Rust source will be published in a linked repository to comply with GPL and upstream requests.
+
 **Issues for this fork:** [github.com/liuqianjin559-cmyk/slint-ai/issues](https://github.com/liuqianjin559-cmyk/slint-ai/issues)
 
 ---
@@ -165,5 +174,14 @@ pnpm package:desktop
 ### 许可与上游
 
 基于 [slint-ui/slint](https://github.com/slint-ui/slint)（`editors/vscode`）修改，遵循 **GPL-3.0**（见 [LICENSE.txt](LICENSE.txt)）。
+
+### 源码说明
+
+| 组件 | 位置 | 状态 |
+|------|------|------|
+| **VS Code 扩展**（TypeScript） | 本仓库 | ✅ 已公开 |
+| **slint-lsp**（Rust，拷贝节点 + 中文预览） | 独立 fork — 见 [docs/SOURCE.md](docs/SOURCE.md) | 🚧 整理发布中 |
+
+打包的 VSIX 内含 Windows x64 预编译 `slint-lsp`。对应 Rust 源码将在链接仓库中公开，以满足 GPL 与上游要求。
 
 **本 fork 问题反馈：** [github.com/liuqianjin559-cmyk/slint-ai/issues](https://github.com/liuqianjin559-cmyk/slint-ai/issues)
