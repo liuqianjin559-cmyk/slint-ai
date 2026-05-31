@@ -1,4 +1,4 @@
-# Slint AI for Visual Studio Code / Slint AI VS Code 扩展
+# Node Path Copier for Slint / Slint 节点路径拷贝器
 
 [English](#english) · [中文](#中文)
 
@@ -8,15 +8,15 @@
 
 ## English
 
-**Slint AI** is a productivity-focused fork of the official [Slint](https://slint.dev) VS Code extension. It is built for developers who work with **AI coding assistants** (Cursor, GitHub Copilot, Claude, etc.) and need **precise, unambiguous references** to UI elements in `.slint` files.
+**Node Path Copier for Slint** is a community fork of the official [Slint](https://slint.dev) VS Code extension. It is built for developers who work with **AI coding assistants** (Cursor, GitHub Copilot, Claude, etc.) and need **precise, unambiguous references** to UI elements in `.slint` files.
 
-> **Not the official extension.** Upstream: [Slint.slint](https://marketplace.visualstudio.com/items?itemName=Slint.slint) by SixtyFPS GmbH.
+> **Not affiliated with SixtyFPS.** This is **not** the official Slint extension. Official: [Slint.slint](https://marketplace.visualstudio.com/items?itemName=Slint.slint) by SixtyFPS GmbH.
 
-### Why Slint AI?
+### Why Node Path Copier?
 
 When you ask an AI to *“move this button 10px left”* or *“change the label color in the login form”*, the hardest part is not the edit itself — it is **telling the AI exactly which element you mean**. Slint UIs are deeply nested: `Window` → `VerticalLayout` → `HorizontalLayout` → `Button` → …
 
-**Slint AI solves this with Copy node hierarchy** — copy the full element path from the live preview and paste it straight into your AI chat.
+**Node Path Copier solves this with Copy node hierarchy** — copy the full element path from the live preview and paste it straight into your AI chat.
 
 ### Copy node hierarchy — built for AI precision
 
@@ -38,13 +38,13 @@ MainWindow > VerticalLayout#root > LoginForm > HorizontalLayout > Button#submit
 
 **Typical workflow**
 
-1. Open **Slint AI: Show Preview** on your `.slint` file.
+1. Open **Node Path Copier: Show Preview** on your `.slint` file.
 2. Switch to **interactive / selecting** mode and click the target widget.
 3. Click **Copy node** in the selection popup.
 4. Paste into your AI assistant: *“Change the text of `MainWindow > … > Button#submit` to ‘Sign in’.”*
 5. The AI locates the correct element on the first try.
 
-This is the core idea behind Slint AI: **bridge the gap between visual UI and AI-readable structure**.
+This is the core idea: **bridge the gap between visual UI and AI-readable structure**.
 
 ### Other features
 
@@ -55,12 +55,12 @@ This is the core idea behind Slint AI: **bridge the gap between visual UI and AI
 
 ### Installation
 
-**Marketplace** (after publish): search **Slint AI** (`slint-ai.slint-ai`).
+**Marketplace:** search **Node Path Copier for Slint** (`slint-ai.slint-ai`).
 
 **Local VSIX:**
 
 ```sh
-code --install-extension slint-ai-1.17.0.vsix
+code --install-extension slint-ai-1.17.1.vsix
 ```
 
 **Build from source:**
@@ -91,15 +91,15 @@ Based on [slint-ui/slint](https://github.com/slint-ui/slint) (`editors/vscode`).
 
 ## 中文
 
-**Slint AI** 是基于官方 [Slint](https://slint.dev) VS Code 扩展打造的效率增强版，面向使用 **AI 编程助手**（Cursor、GitHub Copilot、Claude 等）的 Slint 开发者，解决「**如何让 AI 精准定位 UI 元素**」这一核心痛点。
+**Node Path Copier for Slint**（Slint 节点路径拷贝器）是基于官方 [Slint](https://slint.dev) VS Code 扩展打造的**社区增强版**，面向使用 **AI 编程助手**（Cursor、GitHub Copilot、Claude 等）的 Slint 开发者，解决「**如何让 AI 精准定位 UI 元素**」这一核心痛点。
 
-> **非官方扩展。** 官方版本：[Slint.slint](https://marketplace.visualstudio.com/items?itemName=Slint.slint)（SixtyFPS GmbH）。
+> **与 SixtyFPS 无关联，非官方扩展。** 官方版本：[Slint.slint](https://marketplace.visualstudio.com/items?itemName=Slint.slint)（SixtyFPS GmbH）。
 
-### 为什么需要 Slint AI？
+### 为什么需要 Node Path Copier？
 
 当你对 AI 说「把这个按钮往左移 10px」或「改登录表单里那个标签的颜色」时，最难的不是改代码，而是 **说清楚指的是哪个控件**。Slint 界面往往嵌套很深：`Window` → `VerticalLayout` → `HorizontalLayout` → `Button` → …
 
-**Slint AI 的核心能力：拷贝节点层级（Copy node）** —— 在实时预览里选中元素，一键复制完整层级路径，直接粘贴给 AI。
+**核心能力：拷贝节点层级（Copy node）** —— 在实时预览里选中元素，一键复制完整层级路径，直接粘贴给 AI。
 
 ### 拷贝节点层级 —— 为 AI 精准定位而设计
 
@@ -121,13 +121,13 @@ MainWindow > VerticalLayout#root > LoginForm > HorizontalLayout > Button#submit
 
 **推荐工作流**
 
-1. 在 `.slint` 文件上执行 **Slint AI: Show Preview**。
+1. 在 `.slint` 文件上执行 **Node Path Copier: Show Preview**。
 2. 进入 **交互 / 选择** 模式，点击目标控件。
 3. 在选区弹窗点击 **复制节点**。
 4. 粘贴到 AI 对话：*「把 `MainWindow > … > Button#submit` 的文本改成「登录」。」*
 5. AI 首次即可定位到正确元素并完成修改。
 
-**Slint AI 的目标：在可视化 UI 与 AI 可理解的结构描述之间架起桥梁。**
+**目标：在可视化 UI 与 AI 可理解的结构描述之间架起桥梁。**
 
 ### 其他功能
 
@@ -138,12 +138,12 @@ MainWindow > VerticalLayout#root > LoginForm > HorizontalLayout > Button#submit
 
 ### 安装
 
-**应用市场**（发布后）：搜索 **Slint AI**（`slint-ai.slint-ai`）。
+**应用市场：** 搜索 **Node Path Copier for Slint**（`slint-ai.slint-ai`）。
 
 **本地 VSIX：**
 
 ```sh
-code --install-extension slint-ai-1.17.0.vsix
+code --install-extension slint-ai-1.17.1.vsix
 ```
 
 **源码构建：**

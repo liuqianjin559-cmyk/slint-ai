@@ -1,10 +1,12 @@
 {
   "name": "slint-ai",
-  "displayName": "Slint AI",
-  "description": "Slint language support for AI-assisted development: copy node hierarchy for precise AI targeting, Chinese live-preview UI, auto-completion, go-to definition, and syntax highlighting.",
+  "displayName": "Node Path Copier for Slint",
+  "description": "Community Slint extension: copy node hierarchy from live preview for precise AI targeting, Chinese preview UI, auto-completion, go-to definition, and syntax highlighting. Not affiliated with SixtyFPS.",
   "keywords": [
     "Slint",
-    "Slint AI",
+    "Node Path Copier",
+    "copy node hierarchy",
+    "community",
     "GUI",
     "UI",
     "HMI",
@@ -14,7 +16,7 @@
     "i18n",
     "drag-and-drop editor"
   ],
-  "version": "1.17.0",
+  "version": "1.17.1",
   "publisher": "slint-ai",
   "icon": "extension-logo.png",
   "license": "GPL-3.0",
@@ -27,7 +29,7 @@
     "url": "https://github.com/liuqianjin559-cmyk/slint-ai.git"
   },
   "galleryBanner": {
-    "color": "#2379F4",
+    "color": "#1A2332",
     "theme": "dark"
   },
   "engines": {
@@ -97,25 +99,25 @@
       {
         "command": "slint.showPreview",
         "title": "Show Preview",
-        "category": "Slint AI",
+        "category": "Node Path Copier",
         "icon": "$(preview)"
       },
       {
         "command": "slint.selectRemotePreview",
         "title": "(Experimental) Connect to Remote Preview",
-        "category": "Slint AI",
+        "category": "Node Path Copier",
         "icon": "$(preview)"
       },
       {
         "command": "slint.disconnectRemotePreview",
         "title": "(Experimental) Disconnect Remote Preview",
-        "category": "Slint AI",
+        "category": "Node Path Copier",
         "icon": "$(debug-disconnect)"
       },
       {
         "command": "slint.reload",
         "title": "Restart server",
-        "category": "Slint AI",
+        "category": "Node Path Copier",
         "icon": "$(debug-restart)"
       },
       {
@@ -152,7 +154,7 @@
     },
     "configuration": {
       "type": "object",
-      "title": "Slint AI",
+      "title": "Node Path Copier for Slint",
       "properties": {
         "slint.lsp-args": {
           "type": "array",
@@ -213,8 +215,8 @@
     "walkthroughs": [
       {
         "id": "slint.welcomeWalkthrough",
-        "title": "Getting Started with Slint AI",
-        "description": "Dive into VS Code's rich Slint AI development experience",
+        "title": "Getting Started with Node Path Copier",
+        "description": "Community Slint extension — copy node paths from live preview for AI-assisted development",
         "steps": [
           {
             "id": "create_slint_file",

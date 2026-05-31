@@ -1,8 +1,14 @@
 # Change Log
 
+## 1.17.1
+
+- **Rebrand** — renamed from "Slint AI" to **Node Path Copier for Slint** to avoid confusion with the official Slint extension
+- **New icon** — original hierarchy-tree + clipboard design (no longer based on the Slint logo)
+- Marketplace description updated to state community / not affiliated with SixtyFPS
+
 ## 1.17.0
 
-Initial release of **Slint AI** — a fork of the official Slint VS Code extension v1.17.0.
+Initial release — a fork of the official Slint VS Code extension v1.17.0 (formerly published as **Slint AI**).
 
 ### Highlights / 亮点
 
